@@ -40,13 +40,15 @@
   .table-wrapper {
     overflow-x: auto;
     margin-top: 20px;
+    -webkit-overflow-scrolling: touch; /* per scroll fluido su iOS */
   }
 
   table {
     border-collapse: collapse;
     width: 100%;
     font-size: 16px;
-    min-width: 600px; /* per mantenere leggibilità su desktop */
+    table-layout: auto; /* lascia che la larghezza si adatti */
+    min-width: 0; /* rimuove il min-width precedente per evitare overflow */
   }
 
   caption {
@@ -64,6 +66,7 @@
     text-align: center;
     border: 1.5px solid #4a90e2; /* bordo azzurro chiaro ma definito */
     background-color: #fff;
+    white-space: nowrap; /* evita che il testo vada a capo, aiuta leggibilità */
   }
 
   th {
@@ -95,6 +98,26 @@
 
   .logo-container img {
     max-height: 800px;
+  }
+
+  /* Responsive per schermi molto piccoli */
+  @media (max-width: 480px) {
+    body {
+      padding: 10px;
+      font-size: 15px;
+    }
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+    th, td {
+      padding: 8px 10px;
+      font-size: 14px;
+    }
+    caption {
+      font-size: 16px;
+      padding: 8px;
+    }
   }
 </style>
 

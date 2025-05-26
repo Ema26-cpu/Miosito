@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="it">
 <head>
@@ -39,17 +40,13 @@
     height: auto;
   }
 
-  /* Wrapper responsivo per tabelle */
-  .table-wrapper {
-    overflow-x: auto;
-    margin-top: 20px;
-  }
-
+  /* Tabella completamente fluida e responsiva */
   table {
     width: 100%;
-    min-width: 600px; /* larghezza minima su desktop */
     border-collapse: collapse;
     font-size: 16px;
+    table-layout: fixed; /* forza larghezza fissa delle colonne */
+    word-wrap: break-word; /* testo a capo se troppo lungo */
   }
 
   caption {
@@ -63,10 +60,11 @@
   }
 
   th, td {
-    padding: 12px 15px;
+    padding: 12px 10px;
     text-align: center;
     border: 1.5px solid #4a90e2;
     background-color: #fff;
+    overflow-wrap: break-word; /* forza il testo a capo */
   }
 
   th {
@@ -102,12 +100,22 @@
 
   /* MEDIA QUERY PER SCHERMI PICCOLI */
   @media (max-width: 600px) {
-    table {
-      min-width: auto; /* togli la larghezza minima */
+    body {
+      padding: 10px;
       font-size: 14px;
     }
+
+    h1 {
+      font-size: 1.5em;
+      margin-bottom: 20px;
+    }
+
+    table {
+      font-size: 13px;
+    }
+
     th, td {
-      padding: 8px 10px;
+      padding: 8px 5px;
     }
   }
 </style>
@@ -131,85 +139,77 @@
     </ul>
 
     <h2>Ascolti televisivi – Finale PSG – Inter (31 maggio 2025)</h2>
-    <div class="table-wrapper">
-      <table>
-        <caption>Ascolti TV in Italia – Finale 2025 (Paris Saint-Germain – Inter)</caption>
-        <thead>
-          <tr>
-            <th>Orario (CEST)</th>
-            <th>Canale</th>
-            <th>Spettatori</th>
-            <th>Share (%)</th>
-            <th>Picco spettatori</th>
-            <th>Picco share (%)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>21:00</td>
-            <td>TV8</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td>21:00</td>
-            <td>Sky Sport Uno</td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-          <tr>
-            <td colspan="2"><strong>Totale</strong></td>
-            <td></td>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
+    <table>
+      <caption>Ascolti TV in Italia – Finale 2025 (Paris Saint-Germain – Inter)</caption>
+      <thead>
+        <tr>
+          <th>Orario (CEST)</th>
+          <th>Canale</th>
+          <th>Spettatori</th>
+          <th>Share (%)</th>
+          <th>Picco spettatori</th>
+          <th>Picco share (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>21:00</td>
+          <td>TV8</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>21:00</td>
+          <td>Sky Sport Uno</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td colspan="2"><strong>Totale</strong></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
 
     <h2>Confronto con le finali precedenti</h2>
-    <div class="table-wrapper">
-      <table>
-        <caption>Ascolti delle finali di Champions League in Italia (2003–2024)</caption>
-        <thead>
-          <tr>
-            <th>Anno</th>
-            <th>Finale</th>
-            <th>Canale/i</th>
-            <th>Spettatori (milioni)</th>
-            <th>Share (%)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>2003</td><td>Juventus – Milan</td><td>Canale 5</td><td>20,2</td><td>67,3</td></tr>
-          <tr><td>2009</td><td>Barcellona – Manchester Utd</td><td>Rai 1</td><td>9,9</td><td>36,1</td></tr>
-          <tr><td>2010</td><td>Bayern – Inter</td><td>Rai 1 + Sky</td><td>13,888</td><td>53,9</td></tr>
-          <tr><td>2011</td><td>Barcellona – Manchester Utd</td><td>Rai 1</td><td>6,1</td><td>26,8</td></tr>
-          <tr><td>2012</td><td>Bayern – Chelsea</td><td>Rai 1</td><td>6,2</td><td>26,0</td></tr>
-          <tr><td>2013</td><td>Dortmund – Bayern</td><td>Rai 1</td><td>5,7</td><td>22,3</td></tr>
-          <tr><td>2014</td><td>Real – Atlético</td><td>Rai 1</td><td>6,2</td><td>26,1</td></tr>
-          <tr><td>2015</td><td>Juventus – Barcellona</td><td>Canale 5</td><td>11,5</td><td>44,5</td></tr>
-          <tr><td>2016</td><td>Real – Atlético</td><td>Canale 5</td><td>6,5</td><td>27,0</td></tr>
-          <tr><td>2017</td><td>Juventus – Real</td><td>Canale 5</td><td>13,0</td><td>54,9</td></tr>
-          <tr><td>2018</td><td>Real – Liverpool</td><td>Canale 5</td><td>6,9</td><td>32,0</td></tr>
-          <tr><td>2019</td><td>Tottenham – Liverpool</td><td>Rai 1 + Sky</td><td>7,2</td><td>27,2</td></tr>
-          <tr><td>2020</td><td>PSG – Bayern</td><td>Canale 5 + Sky</td><td>7,2</td><td>29,3</td></tr>
-          <tr><td>2021</td><td>Chelsea – Manchester City</td><td>Canale 5 + Sky</td><td>7,0</td><td>27,5</td></tr>
-          <tr><td>2022</td><td>Real Madrid – Liverpool</td><td>Canale 5 + Sky</td><td>7,8</td><td>30,5</td></tr>
-          <tr><td>2023</td><td>Manchester City – Inter</td><td>Rai 1 + Sky</td><td>8,5</td><td>32,0</td></tr>
-          <tr><td>2024</td><td>PSG – Bayern</td><td>Canale 5 + Sky</td><td>8,9</td><td>33,7</td></tr>
-        </tbody>
-      </table>
-    </div>
+    <table>
+      <caption>Ascolti delle finali di Champions League in Italia (2003–2024)</caption>
+      <thead>
+        <tr>
+          <th>Anno</th>
+          <th>Finale</th>
+          <th>Canale/i</th>
+          <th>Spettatori (milioni)</th>
+          <th>Share (%)</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr><td>2003</td><td>Juventus – Milan</td><td>Canale 5</td><td>20,2</td><td>67,3</td></tr>
+        <tr><td>2009</td><td>Barcellona – Manchester Utd</td><td>Rai 1</td><td>9,9</td><td>36,1</td></tr>
+        <tr><td>2010</td><td>Bayern – Inter</td><td>Rai 1 + Sky</td><td>13,888</td><td>53,9</td></tr>
+        <tr><td>2011</td><td>Barcellona – Manchester Utd</td><td>Rai 1</td><td>6,1</td><td>26,8</td></tr>
+        <tr><td>2012</td><td>Bayern – Chelsea</td><td>Rai 1</td><td>6,2</td><td>26,0</td></tr>
+        <tr><td>2013</td><td>Dortmund – Bayern</td><td>Rai 1</td><td>5,7</td><td>22,3</td></tr>
+        <tr><td>2014</td><td>Real – Atlético</td><td>Rai 1</td><td>6,2</td><td>26,1</td></tr>
+        <tr><td>2015</td><td>Juventus – Barcellona</td><td>Canale 5</td><td>11,5</td><td>44,5</td></tr>
+        <tr><td>2016</td><td>Real – Atlético</td><td>Canale 5</td><td>6,5</td><td>27,0</td></tr>
+        <tr><td>2017</td><td>Juventus – Real</td><td>Canale 5</td><td>13,0</td><td>54,9</td></tr>
+        <tr><td>2018</td><td>Real – Liverpool</td><td>Canale 5</td><td>6,9</td><td>32,0</td></tr>
+        <tr><td>2019</td><td>Tottenham – Liverpool</td><td>Rai 1 + Sky</td><td>7,2</td><td>27,2</td></tr>
+        <tr><td>2020</td><td>PSG – Bayern</td><td>Canale 5 + Sky</td><td>7,2</td><td>29,3</td></tr>
+        <tr><td>2021</td><td>Chelsea – Manchester City</td><td>Canale 5 + Sky</td><td>7,0</td><td>27,5</td></tr>
+        <tr><td>2022</td><td>Real Madrid – Liverpool</td><td>Canale 5 + Sky</td><td>7,8</td><td>30,5</td></tr>
+        <tr><td>2023</td><td>Manchester City – Inter</td><td>Rai 1 + Sky</td><td>8,5</td><td>32,0</td></tr>
+        <tr><td>2024</td><td>PSG – Bayern</td><td>Canale 5 + Sky</td><td>8,9</td><td>33,7</td></tr>
+      </tbody>
+    </table>
 
     <footer>
-      <p>Copyright &copy; 2025 - Ascolti TV Champions League</p>
-    </footer>
-  </div>
-</body>
-</html>
+      <
